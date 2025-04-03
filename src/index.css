@@ -1,0 +1,29 @@
+.scroll-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Oculta cualquier contenido que se desplace fuera del contenedor */
+  user-select: none;
+}
+
+.scroll-content {
+  display: flex;
+  animation: scrollReviews 30s linear infinite; /* Desplazamiento continuo */
+  transition: none;
+}
+
+@keyframes scrollReviews {
+  0% {
+    transform: translateX(0); /* Empieza desde el principio */
+  }
+  100% {
+    transform: translateX(
+      -50%
+    ); /* Desplazamiento de la mitad del contenido (ya que lo duplicamos) */
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-content {
+    animation: scrollReviews 80s linear infinite; 
+  }
+}
